@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../core/api.service';
+import { of } from 'rxjs/observable/of';
+import { interval } from 'rxjs/observable/interval';
+import { map, switchMap, delay } from 'rxjs/operators';
+import { Observable } from 'rxjs/Observable';
+import { User } from '../core/user';
 
 @Component({
   selector: 'app-user-list',
@@ -6,10 +12,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
+  constructor(public apiService: ApiService) {}
 
-  constructor() { }
+  users$: Observable<User[]> = this.apiService.getUsers();
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

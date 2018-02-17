@@ -1,0 +1,10 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ user.name }}</mat-card-title>
+    <mat-card-subtitle>{{ user.jobTitle }}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="user.image" style="margin-bottom: 0;">
+  <mat-card-actions fxLayoutAlign="end center">
+    <button mat-button>GO !</button>
+  </mat-card-actions>
+</mat-card>

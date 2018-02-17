@@ -1,3 +1,8 @@
-<p>
-  user-list works!
-</p>
+<!-- <mat-list>
+  <mat-list-item *ngFor="let user of users$ | async"> {{ user.image }} </mat-list-item>
+</mat-list> -->
+
+<div class="wrapper">
+  <app-user-item *ngFor="let user of users$ | async" [user]="user" class="item">
+  </app-user-item>
+</div>

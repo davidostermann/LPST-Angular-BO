@@ -1,0 +1,29 @@
+.wrapper {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 10px;
+  width: 80vw;
+}
+
+@media(min-width: 720px) {
+  .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    width: 90vw;
+  }
+}
+
+@media(min-width: 980px) {
+  .wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media(min-width: 1200px) {
+  .wrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* https://alligator.io/css/css-grid-layout-fr-unit/ */
+/* fr = fraction */

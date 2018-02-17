@@ -12,10 +12,11 @@ import { UserComponent } from './user/user.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { PostComponent } from './post/post.component';
-import { ApiService } from './api.service';
+import { ApiService } from './core/api.service';
+import { UserItemComponent } from './user-list/user-item/user-item.component';
 
 @NgModule({
-  declarations: [AppComponent, ContentComponent, UserComponent, UserListComponent, PostListComponent, PostComponent],
+  declarations: [AppComponent, ContentComponent, UserComponent, UserListComponent, PostListComponent, PostComponent, UserItemComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
