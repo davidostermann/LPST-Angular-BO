@@ -5,6 +5,6 @@
   </mat-card-header>
   <img mat-card-image [src]="user.image" style="margin-bottom: 0;">
   <mat-card-actions fxLayoutAlign="end center">
-    <button mat-button>GO !</button>
+    <button mat-button [routerLink]="['/user', user.id]" color="primary">GO !</button>
   </mat-card-actions>
 </mat-card>

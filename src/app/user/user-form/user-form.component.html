@@ -1,0 +1,12 @@
+<div *ngIf="userData" class="container" fxLayout="row" fxLayoutAlign="center">
+  <form [formGroup]="userData" (ngSubmit)="sendUser()" fxLayout="column" fxLayoutAlign="center" fxFlex.gt-xs="1 1 480px" fxFlex.xs="1 1 80%"
+    fxLayoutGap="2em">
+    <mat-form-field>
+      <input matInput placeholder="Full name" name="name" formControlName="name">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Job title" name="jobTitle" formControlName="jobTitle">
+    </mat-form-field>
+    <button mat-raised-button color="primary">Envoyer</button>
+  </form>
+</div>

@@ -1,3 +1,16 @@
-<p>
-  user works!
-</p>
+<mat-card *ngIf="user" class="container">
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <mat-card-header>
+      <mat-card-title>{{ user.name }}</mat-card-title>
+      <mat-card-subtitle>{{ user.jobTitle }}</mat-card-subtitle>
+    </mat-card-header>
+    <div fxLayoutAlign="end center">
+      <button mat-button [routerLink]="['/user', user.id, 'posts']" color="primary">Show post</button>
+      <button mat-button [routerLink]="['/user', user.id, 'edit']" color="primary">Edit</button>
+    </div>
+  </div>
+  <mat-card-content fxLayout="row" [fxLayout.lt-md]="'column'" fxLayoutGap="1em" fxLayoutAlign="space-between center">
+    <img class="user-img"[src]="user.image">
+    <router-outlet></router-outlet>
+  </mat-card-content>
+</mat-card>

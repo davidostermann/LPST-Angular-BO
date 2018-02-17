@@ -14,16 +14,21 @@ import { PostListComponent } from './post-list/post-list.component';
 import { PostComponent } from './post/post.component';
 import { ApiService } from './core/api.service';
 import { UserItemComponent } from './user-list/user-item/user-item.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { UserFormComponent } from './user/user-form/user-form.component';
+import { UserPostsComponent } from './user/user-posts/user-posts.component';
 
 @NgModule({
-  declarations: [AppComponent, ContentComponent, UserComponent, UserListComponent, PostListComponent, PostComponent, UserItemComponent],
+  declarations: [AppComponent, ContentComponent, UserComponent, UserListComponent, PostListComponent, PostComponent, UserItemComponent, UserFormComponent, UserPostsComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     RoutingModule,
     FlexLayoutModule,
     MatModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]
