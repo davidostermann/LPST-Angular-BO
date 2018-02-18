@@ -22,6 +22,7 @@ export class UserFormComponent implements OnInit {
   editing = false;
 
   ngOnInit() {
+    // https://toddmotto.com/angular-parent-routing-params
     const id = +this.route.snapshot.paramMap.get('id') || +this.route.parent.snapshot.paramMap.get('id');
     this.createForm(id);
   }

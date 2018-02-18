@@ -5,8 +5,9 @@
       <mat-card-subtitle>{{ user.jobTitle }}</mat-card-subtitle>
     </mat-card-header>
     <div fxLayoutAlign="end center">
-      <button mat-button [routerLink]="['/user', user.id, 'posts']" color="primary">Show post</button>
-      <button mat-button [routerLink]="['/user', user.id, 'edit']" color="primary">Edit</button>
+      <!-- Use of relative path -->
+      <button mat-button [routerLink]="['posts']" color="primary">Show post</button>
+      <button mat-button [routerLink]="['edit']" color="primary">Edit profile</button>
     </div>
   </div>
   <mat-card-content fxLayout="row" [fxLayout.lt-md]="'column'" fxLayoutGap="1em" fxLayoutAlign="space-between center">
