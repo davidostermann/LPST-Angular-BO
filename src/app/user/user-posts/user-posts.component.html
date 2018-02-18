@@ -1,3 +1,9 @@
-<p>
-  user-posts works!
-</p>
+<mat-list>
+  <mat-list-item *ngFor="let p of posts$ | async" class="post">
+    <div>{{ p.title }}</div>
+    <div fxLayout="row" fxLayoutAlign="end center" fxFlex="1 0 auto">
+      <button mat-icon-button  [routerLink]="['/post', p.id]"><mat-icon>edit</mat-icon></button>
+      <button mat-icon-button><mat-icon>delete</mat-icon></button>
+    </div>
+  </mat-list-item>
+</mat-list>

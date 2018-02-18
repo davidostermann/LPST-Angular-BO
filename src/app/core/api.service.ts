@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { User } from './user';
 import { switchMap, map, tap } from 'rxjs/operators';
 import { Subject } from 'rxjs/Subject';
+import { Post } from './post';
 
 const HOST = 'http://localhost:3000';
 
@@ -41,14 +42,24 @@ export class ApiService {
   }
 
   updateUser(user) {
-    const u: User = { ...user, image: `https://dummyimage.com/360x220/DDF/fff/&text=${user.name}`};
+    const u: User = {
+      ...user,
+      image: `https://dummyimage.com/360x220/DDF/fff/&text=${user.name}`
+    };
     console.log(`u = ${JSON.stringify(u)}`);
 
     return this.http
       .put(`${HOST}/users/${user.id}`, u)
       .pipe(
         tap(data => console.log(data)),
-        tap(data => this.userUpdate$.next(data as User)),
+        tap(data => this.userUpdate$.next(data as User))
       );
   }
+
+  getUserPosts(id): Observable<Post[]> {
+    return this.http
+      .get(`${HOST}/users/${id}/posts`)
+      .pipe(tap(data => console.log(data))) as Observable<Post[]>;
+  }
+
 }

@@ -6,16 +6,18 @@ import { UserComponent } from './user/user.component';
 import { UserFormComponent } from './user/user-form/user-form.component';
 import { UserPostsComponent } from './user/user-posts/user-posts.component';
 import { PostListComponent } from './post-list/post-list.component';
+import { PostComponent } from './post/post.component';
 
 const ROUTES: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'users' },
-  { component: UserListComponent, path: 'users' },
-  { component: UserFormComponent, path: 'user/create' },
-  { component: UserComponent, path: 'user/:id', children: [
+  { path: 'users', component: UserListComponent },
+  { path: 'user/create', component: UserFormComponent },
+  { path: 'user/:id', component: UserComponent, children: [
     { path: 'posts', component: UserPostsComponent},
     { path: 'edit', component: UserFormComponent}
   ] },
-  { component: PostListComponent, path: 'posts' }
+  { path: 'posts', component: PostListComponent },
+  { path: 'post/:id', component: PostComponent }
 ];
 
 @NgModule({
