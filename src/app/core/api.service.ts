@@ -12,6 +12,7 @@ const HOST = 'http://localhost:3000';
 export class ApiService {
   constructor(private http: HttpClient) {}
 
+  // https://makina-corpus.com/blog/metier/2017/premiers-pas-avec-rxjs-dans-angular
   userUpdate$ = new Subject<User>();
 
   getUsers(): Observable<any> {
@@ -62,4 +63,9 @@ export class ApiService {
       .pipe(tap(data => console.log(data))) as Observable<Post[]>;
   }
 
+  getPost(id): Observable<Post> {
+    return this.http
+      .get(`${HOST}/posts/${id}`)
+      .pipe(tap(data => console.log(data))) as Observable<Post>;
+  }
 }
